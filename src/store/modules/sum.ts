@@ -24,9 +24,6 @@ class SumGetters extends Getters<SumState> {
 class SumMutations extends Mutations<SumState> {
   setSum(payload: Payload) {
     this.state.sum = (payload.input_a + payload.input_b).toString();
-    console.log("input_a", payload.input_a);
-    console.log("input_b", payload.input_b);
-    console.log("sum", this.state.sum);
   }
 }
 
