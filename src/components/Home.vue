@@ -1,8 +1,11 @@
 <template>
   <div class="container w-80 mx-auto my-20 px-6 py-6 shadow">
-    <h1 class="text-pink-600 font-bold font-sans text-4xl text-center">
-      Calculator
-    </h1>
+    <slot name="titleSlot" :title="title">
+      <h1 class="text-pink-600 font-bold font-sans text-4xl text-center">
+        {{ title }}
+      </h1>
+    </slot>
+
     <div class="h-0.5 bg-gray-200 w-36 mx-auto mt-2.5"></div>
     <div class="flex items-center my-5">
       <label class="w-20 text-right" for="input_a">A</label>
@@ -90,6 +93,9 @@ interface State {
 }
 
 export default defineComponent({
+  props: {
+    title: String,
+  },
   data: (): State => {
     const sum = useSum();
     return { input_a: 0, input_b: 0, sumStore: sum };

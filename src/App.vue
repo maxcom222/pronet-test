@@ -1,5 +1,11 @@
 <template>
-  <Home />
+  <Home :title="'Calculator'">
+    <template v-slot:titleSlot="props">
+      <h1 class="text-pink-600 font-bold font-sans text-4xl text-center">
+        {{ props.title }}
+      </h1>
+    </template>
+  </Home>
 </template>
 
 <script lang="ts">
